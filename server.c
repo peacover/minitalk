@@ -6,13 +6,11 @@
 /*   By: yer-raki <yer-raki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 11:50:26 by yer-raki          #+#    #+#             */
-/*   Updated: 2021/06/23 14:58:21 by yer-raki         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:26:23 by yer-raki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-// #include "minitalk_utils.c"
-// #include "minitalk_utils2.c"
 
 char	*g_s;
 
@@ -74,6 +72,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	(void)argc;
 	pid = getpid();
+	g_s = NULL;
 	g_s = ft_strdup("");
 	signal(SIGUSR1, handle_usr1);
 	signal(SIGUSR2, handle_usr2);

@@ -6,7 +6,7 @@
 /*   By: yer-raki <yer-raki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 11:50:33 by yer-raki          #+#    #+#             */
-/*   Updated: 2021/06/23 15:52:06 by yer-raki         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:25:55 by yer-raki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	send_my_bin(int bin, int pid)
 		i++;
 		usleep(100);
 	}
+	free(s_bin);
 }
 
 int	main(int argc, char **argv)
@@ -63,10 +64,14 @@ int	main(int argc, char **argv)
 	int			i;
 	int			bin;
 
-	(void)argc;
 	i = 0;
 	pid = ft_atoi(argv[1]);
-	s = argv[2];
+	s = ft_strdup(argv[2]);
+	if (argc != 3)
+	{
+		ft_putstr("INVALID NUMBER OF ARGS");
+		exit(0);
+	}
 	while (s[i])
 	{
 		bin = decimal_to_binary(s[i]);
@@ -75,4 +80,5 @@ int	main(int argc, char **argv)
 	}
 	bin = decimal_to_binary('\n');
 	send_my_bin(bin, pid);
+	free(s);
 }

@@ -6,7 +6,7 @@
 /*   By: yer-raki <yer-raki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 14:49:40 by yer-raki          #+#    #+#             */
-/*   Updated: 2021/06/23 14:58:09 by yer-raki         ###   ########.fr       */
+/*   Updated: 2021/06/25 13:29:14 by yer-raki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,16 @@ char	*ft_strjoin(char const *s1, char const c)
 	s3[i++] = c;
 	s3[i] = '\0';
 	return (s3);
+}
+
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
 }
